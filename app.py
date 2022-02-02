@@ -30,7 +30,7 @@ def convert_df(dataframe):
 # Search bar
 st.title('Tiktok Analytics Dashboard')
 with st.form(key='my_form'):
-    text, int_val, int_val2, _ = st.columns([2, 1.2, 1.6, 5])
+    text, int_val, int_val2, _ = st.columns([3, 2.6, 2.6, 2])
     hashtag = text.text_input(
         'Search for a hashtag here', placeholder="Type any hashtag as fifa, f1, ...")
     nb_results = int_val.number_input('Amount of data to fetch', min_value=20,
