@@ -11,7 +11,7 @@ How to get started ?
 <li> Type the hashtag you want to analyse</li>
 <li> Press the **Get Data** button</li>
 <li> Analyse the visualisations</li>
-</ol><br>
+</ol>
 
 ## References
 
