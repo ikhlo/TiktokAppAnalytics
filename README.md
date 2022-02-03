@@ -5,7 +5,7 @@ You can do your analysis by fetching real time data on the videos concerned by t
 
 ## Start playing with Tiktok Analytics
 
-How to get started ?
+How to get started ? Access the web application at the current [link](https://share.streamlit.io/ikhlo/tiktokappanalytics/main/app.py) and follow the steps below :
 
 <ol>
 <li> Type the hashtag you want to analyse</li>
