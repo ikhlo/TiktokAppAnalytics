@@ -12,7 +12,7 @@ def get_data(hashtag, nb_lines='50'):
     verifyFp = "verify_4fb73d0c964f3849e16574a5ac21ef7c"
     api = tiktok.get_instance(custom_verify=verifyFp, use_test_endpoints=True)
     # Get data by hashtag, try fetch data 3 times before giving up
-    for i in range(0, 3):
+    for i in range(0, 10):
         try:
             trending = api.by_hashtag(hashtag, count=nb_lines)
             break
