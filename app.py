@@ -9,7 +9,7 @@ from tiktok import get_data
 import sys
 import os
 import subprocess
-from subprocess import call
+from subprocess import call, run
 
 import streamlit as st
 st.set_page_config(layout="wide")
@@ -56,7 +56,7 @@ if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
     st.write(f"{sys.executable}")
-    res = call([f"{sys.executable}",
+    res = run([f"{sys.executable}",
          'tiktok.py', hashtag, str(nb_results)])
     try:
         res.check_returncode()
