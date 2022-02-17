@@ -57,7 +57,7 @@ if submit_button:
     # Fetch data
     st.write(f"{sys.executable}")
     res = run([f"{sys.executable}",
-         'tiktok.py', hashtag, str(nb_results)])
+         os.path.dirname(__file__) +'/tiktok.py', hashtag, str(nb_results)])
     try:
         res.check_returncode()
         st.info(res.stdout)
