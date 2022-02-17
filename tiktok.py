@@ -19,7 +19,7 @@ def get_data(hashtag, nb_lines='50'):
         except:
             print(f"Tried to fetch data {i + 1} times.")
             sleep(4)
-        if i == 2:
+        if i == 10:
             print("This challenge does not exists.")
             print()
             pd.DataFrame().to_csv('tiktokData.csv')
