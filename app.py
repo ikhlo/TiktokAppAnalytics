@@ -4,6 +4,7 @@ import plotly.express as px
 
 from wordcloud import WordCloud
 from utils import build_word_cloud, author_count_activity
+from tiktok import get_data
 
 import sys
 import os
@@ -53,8 +54,9 @@ rename_columns = {'stats_diggCount':'NbOfLikes', 'stats_playCount':'NbOfViews',
 if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
-    df = run([f"{sys.executable}",
+    run([f"{sys.executable}",
          'tiktok.py', hashtag, str(nb_results)])
+    df = get_data(hashtag, str(nb_results))
     st.write(os.listdir(os.path.dirname(__file__)))
     #df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
     df = df.rename(columns=rename_columns)
