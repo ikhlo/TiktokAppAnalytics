@@ -9,9 +9,11 @@ How to get started ? Access the web application at the current [link](https://sh
 
 <ol>
 <li> Type the hashtag you want to analyse</li>
-<li> Press the **Get Data** button</li>
+<li> Press the <strong>Get Data</strong> button</li>
 <li> Analyse the visualisations</li>
 </ol>
+
+<img src="https://github.com/ikhlo/TiktokAppAnalytics/blob/main/videos/F1_video.gif" width="40" height="40" />
 
 ## References
 
