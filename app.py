@@ -6,6 +6,7 @@ from wordcloud import WordCloud
 from utils import build_word_cloud, author_count_activity
 
 import sys
+import os
 from subprocess import call
 
 import streamlit as st
@@ -54,7 +55,7 @@ if submit_button:
     # Fetch data
     call([f"{sys.executable}",
          'tiktok.py', hashtag, str(nb_results)])
-    df = pd.read_csv('tiktokData.csv', index_col=0)
+    df = pd.read_csv(os.path.dirname(__file__) +'tiktokData.csv', index_col=0)
     df = df.rename(columns=rename_columns)
     df['trunc_desc'] = df['desc'].apply(
         lambda x: x[:30]+'...' if len(x) > 30 else x)
@@ -124,7 +125,7 @@ if submit_button:
         plt.imshow(wordcloud_viz, interpolation="bilinear")
         plt.axis('off')
         plt.savefig('wordcloud.png')
-        st.image('wordcloud.png', use_column_width='auto', )
+        st.image(os.path.dirname(__file__) +'wordcloud.png', use_column_width='auto', )
 
     with most2:
         sub_df = author_count_activity(df)
