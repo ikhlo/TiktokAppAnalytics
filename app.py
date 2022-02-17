@@ -54,8 +54,8 @@ rename_columns = {'stats_diggCount':'NbOfLikes', 'stats_playCount':'NbOfViews',
 if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
-    run([f"{sys.executable}",
-         'tiktok.py', hashtag, str(nb_results)])
+    """run([f"{sys.executable}",
+         'tiktok.py', hashtag, str(nb_results)])"""
     df = get_data(hashtag, str(nb_results))
     st.write(os.listdir(os.path.dirname(__file__)))
     #df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
