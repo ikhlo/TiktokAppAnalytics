@@ -12,7 +12,7 @@ def get_data(hashtag, nb_lines='50'):
     verifyFp = "verify_4fb73d0c964f3849e16574a5ac21ef7c"
     api = tiktok.get_instance(custom_verify=verifyFp, use_test_endpoints=True)
     # Get data by hashtag, try fetch data 3 times before giving up
-    for i in range(0, 10):
+    for i in range(0, 4):
         try:
             trending = api.by_hashtag(hashtag, count=nb_lines)
             print(trending)
@@ -20,7 +20,7 @@ def get_data(hashtag, nb_lines='50'):
         except:
             print(f"Tried to fetch data {i + 1} times.")
             sleep(4)
-        if i == 9:
+        if i == 3:
             print("This challenge does not exists.")
             print()
             pd.DataFrame().to_csv('tiktokData.csv')
@@ -32,7 +32,6 @@ def get_data(hashtag, nb_lines='50'):
     # Convert processed data into csv
     pd.DataFrame.from_dict(
         processed_data, orient='index').to_csv('tiktokData.csv')
-    return pd.DataFrame.from_dict(processed_data, orient='index')
 
 
 if __name__ == '__main__':

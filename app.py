@@ -8,7 +8,8 @@ from tiktok import get_data
 
 import sys
 import os
-from subprocess import run
+import subprocess
+from subprocess import call
 
 import streamlit as st
 st.set_page_config(layout="wide")
@@ -54,11 +55,17 @@ rename_columns = {'stats_diggCount':'NbOfLikes', 'stats_playCount':'NbOfViews',
 if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
-    """run([f"{sys.executable}",
-         'tiktok.py', hashtag, str(nb_results)])"""
-    df = get_data(hashtag, str(nb_results))
-    st.write(os.listdir(os.path.dirname(__file__)))
-    #df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
+    st.write(f"{sys.executable}")
+    res = call([f"{sys.executable}",
+         'tiktok.py', hashtag, str(nb_results)])
+    try:
+        res.check_returncode()
+        st.info(res.stdout)
+    except subprocess.CalledProcessError as e:
+        st.error(res.stderr)
+        raise e
+
+    df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
     df = df.rename(columns=rename_columns)
     df['trunc_desc'] = df['desc'].apply(
         lambda x: x[:30]+'...' if len(x) > 30 else x)
