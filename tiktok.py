@@ -4,7 +4,6 @@ from TikTokApi import TikTokApi as tiktok
 from utils import processing
 import pandas as pd
 import sys
-import os
 
 
 def get_data(hashtag, nb_lines='50'):
@@ -31,7 +30,7 @@ def get_data(hashtag, nb_lines='50'):
 
     # Convert processed data into csv
     pd.DataFrame.from_dict(
-        processed_data, orient='index').to_csv(os.path.dirname(__file__) +'tiktokData.csv')
+        processed_data, orient='index').to_csv('tiktokData.csv')
 
 
 if __name__ == '__main__':

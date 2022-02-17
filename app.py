@@ -7,7 +7,7 @@ from utils import build_word_cloud, author_count_activity
 
 import sys
 import os
-from subprocess import call
+from subprocess import run
 
 import streamlit as st
 st.set_page_config(layout="wide")
@@ -53,7 +53,7 @@ rename_columns = {'stats_diggCount':'NbOfLikes', 'stats_playCount':'NbOfViews',
 if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
-    call([f"{sys.executable}",
+    run([f"{sys.executable}",
          'tiktok.py', hashtag, str(nb_results)])
     st.write(os.listdir(os.path.dirname(__file__)))
     df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
@@ -125,7 +125,7 @@ if submit_button:
                                   height=560).generate_from_frequencies(build_word_cloud(df, hashtag, nb_words))
         plt.imshow(wordcloud_viz, interpolation="bilinear")
         plt.axis('off')
-        plt.savefig(os.path.dirname(__file__) +'/wordcloud.png')
+        plt.savefig('wordcloud.png')
         st.image(os.path.dirname(__file__) +'/wordcloud.png', use_column_width='auto', )
 
     with most2:
