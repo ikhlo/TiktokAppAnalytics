@@ -125,7 +125,7 @@ if submit_button:
                                   height=560).generate_from_frequencies(build_word_cloud(df, hashtag, nb_words))
         plt.imshow(wordcloud_viz, interpolation="bilinear")
         plt.axis('off')
-        plt.savefig('wordcloud.png')
+        plt.savefig(os.path.dirname(__file__) +'/wordcloud.png')
         st.image(os.path.dirname(__file__) +'/wordcloud.png', use_column_width='auto', )
 
     with most2:
