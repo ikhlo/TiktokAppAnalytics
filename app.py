@@ -55,7 +55,7 @@ if submit_button:
     # Fetch data
     call([f"{sys.executable}",
          'tiktok.py', hashtag, str(nb_results)])
-    print(os.listdir(os.path.dirname(__file__)))
+    st.write(os.listdir(os.path.dirname(__file__)))
     df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
     df = df.rename(columns=rename_columns)
     df['trunc_desc'] = df['desc'].apply(
