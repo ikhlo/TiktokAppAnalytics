@@ -1,10 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
 import plotly.express as px
+
 from wordcloud import WordCloud
 from utils import build_word_cloud, author_count_activity
-
 
 import sys
 from subprocess import call
