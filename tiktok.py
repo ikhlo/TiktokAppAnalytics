@@ -6,7 +6,7 @@ import pandas as pd
 import sys
 
 
-def get_data(hashtag, nb_lines='50'):
+async def get_data(hashtag, nb_lines='50'):
     nb_lines = int(nb_lines)
     # Cookie data
     verifyFp = "verify_4fb73d0c964f3849e16574a5ac21ef7c"
@@ -14,7 +14,7 @@ def get_data(hashtag, nb_lines='50'):
     # Get data by hashtag, try fetch data 3 times before giving up
     for i in range(0, 10):
         try:
-            trending = api.by_hashtag(hashtag, count=nb_lines)
+            trending = await api.by_hashtag(hashtag, count=nb_lines)
             break
         except:
             print(f"Tried to fetch data {i + 1} times.")
