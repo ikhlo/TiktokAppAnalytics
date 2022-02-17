@@ -56,8 +56,9 @@ if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
     st.write(f"{sys.executable}")
-    res = run([f"{sys.executable}",
+    res = call([f"{sys.executable}",
          os.path.dirname(__file__) +'/tiktok.py', hashtag, str(nb_results)])
+    st.write(res)
     try:
         res.check_returncode()
         st.info(res.stdout)
