@@ -31,6 +31,7 @@ def get_data(hashtag, nb_lines='50'):
     # Convert processed data into csv
     pd.DataFrame.from_dict(
         processed_data, orient='index').to_csv('tiktokData.csv')
+    return pd.DataFrame.from_dict(processed_data, orient='index')
 
 
 if __name__ == '__main__':
