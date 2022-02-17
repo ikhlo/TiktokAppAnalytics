@@ -16,7 +16,7 @@ How to get started ? Access the web application at the current [link](https://sh
 <br>
 
 <p align="center">
-    <img src="https://github.com/ikhlo/TiktokAppAnalytics/blob/main/videos/F1_video.gif" width="400" height="280" />
+    <img src="https://github.com/ikhlo/TiktokAppAnalytics/blob/main/videos/F1_video.gif" width="450" height="280" />
 </p>
 
 ## References
