@@ -13,7 +13,7 @@ How to get started ? Access the web application at the current [link](https://sh
 <li> Analyse the visualisations</li>
 </ol>
 
-<img src="https://github.com/ikhlo/TiktokAppAnalytics/blob/main/videos/F1_video.gif" width="40" height="40" />
+<img src="https://github.com/ikhlo/TiktokAppAnalytics/blob/main/videos/F1_video.gif" width="1000" height="1000" />
 
 ## References
 
