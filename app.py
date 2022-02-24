@@ -56,7 +56,8 @@ if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
     st.write(f"{sys.executable}")
-    Popen([f"{sys.executable} tiktok.py {hashtag} {nb_results}"]).wait()
+    process = Popen([f"{sys.executable}", 'tiktok.py', hashtag, str(nb_results)])
+    process.wait()
     #call([f"{sys.executable}",'tiktok.py', hashtag, str(nb_results)])
 
     df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
