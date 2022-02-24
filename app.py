@@ -9,7 +9,7 @@ from tiktok import get_data
 import sys
 import os
 import subprocess
-from subprocess import call, run
+from subprocess import call, run, Popen
 
 import streamlit as st
 st.set_page_config(layout="wide")
@@ -56,7 +56,8 @@ if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
     st.write(f"{sys.executable}")
-    call([f"{sys.executable}",'tiktok.py', hashtag, str(nb_results)])
+    Popen([f"{sys.executable} tiktok.py {hashtag} {nb_results}"]).wait()
+    #call([f"{sys.executable}",'tiktok.py', hashtag, str(nb_results)])
 
     df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
     df = df.rename(columns=rename_columns)
