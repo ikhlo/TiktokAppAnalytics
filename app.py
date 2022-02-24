@@ -56,15 +56,7 @@ if submit_button:
     st.header(f"Analysis of '{hashtag}' hashtag.")
     # Fetch data
     st.write(f"{sys.executable}")
-    res = call([f"{sys.executable}",
-         os.path.dirname(__file__) +'/tiktok.py', hashtag, str(nb_results)])
-    st.write(res)
-    try:
-        res.check_returncode()
-        st.info(res.stdout)
-    except subprocess.CalledProcessError as e:
-        st.error(res.stderr)
-        raise e
+    call([f"{sys.executable}",'tiktok.py', hashtag, str(nb_results)])
 
     df = pd.read_csv(os.path.dirname(__file__) +'/tiktokData.csv', index_col=0)
     df = df.rename(columns=rename_columns)
