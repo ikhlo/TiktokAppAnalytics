@@ -1,5 +1,7 @@
 # TikTok_Analytics
 
+**Update : Due to Tiktok lasts modifications about cookies policy, this app is not working anymore !!**
+
 Here is an interactive online dashboard that allow you to do some data analysis and visualisation from the hashtags under videos posted on the TikTok application. <br>
 You can do your analysis by fetching real time data on the videos concerned by this hashtag and their author. You can also download a CSV file of those data to do personal analysis and even design machine learning models. <br>
 
